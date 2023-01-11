@@ -6,11 +6,13 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 	"go.uber.org/zap"
+	quoteV3 "rsc.io/quote/v3"
 )
 
 func Index(w http.ResponseWriter, p *http.Request, ps httprouter.Params) {
 	logger, _ := zap.NewProduction()
 	logger.Info("successfuly performed http request")
+	logger.Info(quoteV3.HelloV3())
 }
 
 func main() {
